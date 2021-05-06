@@ -1,0 +1,17 @@
+{
+  "name": "python-to-javascript",
+  "version": "0.0.1",
+  "description": "convert Python3 code to Javascript ES6",
+  "main": "",
+  "scripts": {
+    "test": "mocha ./test-e2e/javascript/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^8.3.2"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,13 @@
+appdirs==1.4.4
+attrs==20.3.0
+bowler==0.8.0
+click==7.1.2
+fissix==19.2b1
+more-itertools==8.7.0
+packaging==20.9
+pluggy==0.13.1
+py==1.10.0
+pyparsing==2.4.7
+pytest==5.4.2
+sh==1.14.1
+wcwidth==0.2.5
