@@ -3,7 +3,7 @@ import re
 
 white_space_rgx = re.compile( r"\s+", re.S )
 hash_comment_rgx = re.compile( r"(\s*)(#)(.*)", re.S )
-tquote_comment_rgx = re.compile( r'(.*?""")(.*?)(""")', re.S )
+tquote_comment_rgx = re.compile( r'(.*?"""|\'\'\')(.*?)("""|\'\'\')', re.S )
 
 def fixComments( nodes ):
     """ comments in triple-quotes are made into block comments (/* ... */);
