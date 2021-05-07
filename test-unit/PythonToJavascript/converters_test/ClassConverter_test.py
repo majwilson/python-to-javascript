@@ -61,3 +61,21 @@ def test_ClassProcess_02():
         '    def __init__( self ): pass',
         '}',
     ]
+
+def test_ClassProcess_03():
+    """ fix 'space after extends' issue """
+    src = """
+        class Bango(Bingo):
+            def __init__( self ): pass
+    """
+    nodes = parseSource( src )
+    cvtr = ClassConverter()
+    matches = cvtr.gather( nodes )
+    cvtr.processAll( matches )
+    # dumpTree( nodes )
+    # dumpLines( nodesToString( nodes ) )
+    assert nodesToLines( nodes ) == [
+         'class Bango extends Bingo {',
+        '    def __init__( self ): pass',
+        '}',
+    ]

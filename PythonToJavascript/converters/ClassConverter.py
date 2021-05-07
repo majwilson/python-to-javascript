@@ -24,6 +24,7 @@ class ClassConverter( Converter ):
             par_node.replace( makeLeaf( "PYJS", "extends", " " ) )
             par_node = self.findNodeReverse( match.args.parent, "RPAR" )
             par_node.remove()
+            match.args.prefix = " "
         match.colon.remove()
         class_suite = match.suite
         class_suite.insert_child( 0, makeLeaf( "LBRACE", "{", ' ' ) )
