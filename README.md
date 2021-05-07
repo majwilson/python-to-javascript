@@ -95,7 +95,7 @@ python PythonToJavascriptForTest  \
 
 * the following are currently not handled
     * `new` for object instantiation
-    * rewrting signatures of functions called with keyword arguments
+    * rewriting signatures of functions called with keyword arguments
     * static data & methods
     * `async`
     * generators
