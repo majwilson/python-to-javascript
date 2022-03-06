@@ -13,7 +13,12 @@ def fixComments( nodes ):
             text = node.value
             tquote_m = tquote_comment_rgx.match( text )
             if tquote_m:
-                node.value = "/*" + tquote_m.group( 2 ) + "*/"
+                if node.prev_sibling is None:
+                    # Comment string (use jsdoc double-star prefix)
+                    node.value = "/**" + tquote_m.group( 2 ) + "*/"
+                else:
+                    # Preserve other strings as template literals
+                    node.value = "`" + tquote_m.group( 2 ) + "`"
         else:
             text = node.prefix if white_space_rgx.sub( "", node.prefix ) else ""
             hash_m = hash_comment_rgx.match( text )
