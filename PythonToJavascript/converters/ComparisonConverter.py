@@ -53,6 +53,14 @@ class ComparisonConverter( Converter ):
                 match.right.prefix = " "
                 match.node.append_child( match.right.clone() )
                 match.node.append_child( makeLeaf( "RPAR", ")", " " ) )
+        elif comp_op_kind == "comp_op" and match.comp_op.toString() == "not in":
+                clearNode( match.node )
+                match.node.append_child( makeLeaf( "PYJS", "!" ) )
+                match.node.append_child( makeLeaf( "LPAR", "(" ) )
+                match.node.append_child( match.left.clone() )
+                match.node.append_child( makeLeaf( "PYJS", " in " ) )
+                match.node.append_child( match.right.clone() )
+                match.node.append_child( makeLeaf( "RPAR", ")", " " ) )
 
         elif comp_op_kind == "comp_op" and match.comp_op.toString() == "is not":
             if match.right.toString() == "None":
